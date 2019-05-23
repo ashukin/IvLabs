@@ -1,0 +1,114 @@
+
+#include<stdio.h>
+
+int count(int a[], int n)
+
+{
+
+	int p=0,j=0,c=1;
+
+	int m, max, i;
+
+	while(j<n)
+
+	{
+
+		c++;
+
+		m = a[j];
+
+		max = a[j];
+
+		for(i=j;i<=m+j;i++)
+
+		{
+
+			if(a[i]>=max)
+
+			{
+
+				max = a[i];
+
+				p=i;
+
+			}
+
+		}
+
+		
+
+		if(max==0)
+
+		{
+
+			return 0;
+
+		}
+
+		if ((p+max) >= n-1)
+
+		{
+
+			break;
+
+		}
+
+		else
+
+		{
+
+			j = j+m;
+
+		}
+
+	}
+
+return c;
+
+}
+
+
+
+void main()
+
+{
+
+	int n,a[100],c,i;
+
+	printf("Enter the size of the array\n");
+
+	scanf("%d",&n);
+
+	printf("Enter the array elements\n");
+
+	for(i=0;i<n;i++)
+
+	{
+
+		scanf("%d",&a[i]);
+
+	}
+
+	c = count(a,n);
+
+	if((a[0]==0)||(c==0))
+
+	{
+
+		printf("Not possible\n");
+
+	}
+
+	else
+
+	{
+
+	    printf("%d",c);
+
+	}
+
+	
+
+}
+
+
